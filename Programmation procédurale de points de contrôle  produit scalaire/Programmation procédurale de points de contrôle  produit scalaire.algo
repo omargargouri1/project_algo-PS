@@ -1,0 +1,29 @@
+PROCEDURE Dot_product(v1,v2 : ARRAY_OF INTEGER ,DP:INTEGER)
+VAR
+i:INTEGER
+l:v1.length-1;
+s:v2.length-1;
+BEGIN
+IF (l<>s) THEN
+    write("vector are not equal")
+    END_IF
+    else
+    FOR i FROM 0 TO l STEP 1  DO
+       DP+=v1[i]*v2[i]
+    END_FOR
+IF(DP==0)THEN
+write("the vectors are orthogonal")
+END_IF
+END
+ALGORITHM Orthogonal
+VAR
+   i,j:INTEGER
+   set:ARRAY_OF ARRAY
+   n: set.length-1
+BEGIN
+FOR i FROM 0 TO n STEP 1  DO
+FOR i FROM i+1 TO n STEP 1  DO
+Dot_product(set[i],set[j])
+END_FOR
+END_FOR
+END
